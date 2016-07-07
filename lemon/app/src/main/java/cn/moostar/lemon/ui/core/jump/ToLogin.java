@@ -10,7 +10,7 @@ public class ToLogin {
 
     public static void login(){
         JumpActivity.JumpInfo info = new JumpActivity.JumpInfo();
-        info.classname = LoginActivity.class + "";
+        info.classname = LoginActivity.class.getSimpleName() + "";
         info.map = null;
 
         JumpActivity.getSingle().toJump(info);

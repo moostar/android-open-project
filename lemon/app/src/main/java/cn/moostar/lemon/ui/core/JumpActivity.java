@@ -2,10 +2,12 @@ package cn.moostar.lemon.ui.core;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 
 import java.util.HashMap;
 
 import cn.moostar.lemon.LemonApp;
+import cn.moostar.lemon.tools.LemonLog;
 
 /**
  * Created by Apple on 16/7/7.
@@ -40,11 +42,12 @@ public class JumpActivity {
     public void addCache(Class<?> cls ){
         if(!actMap.containsKey(cls.getSimpleName() + ""))
             actMap.put(cls.getSimpleName() + "", new ActInfo(cls,false));
-
+        LemonLog.info(this,"addCache : " + cls.getSimpleName() + "");
     }
 
     public void toJump(JumpInfo info){
 
+        LemonLog.info(this,"toJump :" + info.classname);
         if(actMap.containsKey(info.classname)){
             ActInfo actInfo = actMap.get(info.classname);
 
