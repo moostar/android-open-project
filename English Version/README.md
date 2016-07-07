@@ -63,7 +63,15 @@ Similar App: Wordpress Android
 An Android List View implementation with support for drawable cells and many other swipe related features  
 Project Address: https://github.com/47deg/android-swipelistview  
 Demo Apk: https://play.google.com/store/apps/details?id=com.fortysevendeg.android.swipelistview  
-Similar App: 微信  
+Similar App: 微信
+
+1. SlideAndDragListView  
+An extension of the Android ListView that enables slide and drag-and-drop reordering of list items.  
+Project Address: https://github.com/yydcdut/SlideAndDragListView  
+Demo Apk: https://github.com/yydcdut/SlideAndDragListView/blob/master/apk/sdlv.apk?raw=true  
+Similar App: Android 手机QQ 5.0  
+Renderings: ![Renderings](https://raw.githubusercontent.com/yydcdut/SlideAndDragListView/master/gif/v1.1.gif)  
+
    
 1. RecyclerViewSwipeDismiss
 lightweight support-v7 RecyclerView Swipe to dismiss library，Just bind `onTouchListener`
@@ -158,6 +166,12 @@ Demo Apk: https://play.google.com/store/apps/details?id=com.jpardogo.android.lis
 Renderings: ![Renderings](https://raw.github.com/jpardogo/ListBuddies/master/art/screenshot_listbuddies_2.png)  
 <a href="https://github.com/Trinea/android-open-project/edit/master/English%20Version/README.md#include" title="Back to directory" style="width:100%"><img src="http://farm4.staticflickr.com/3737/12167413134_edcff68e22_o.png" align="right"/></a>     
 
+1. RecyclerItemDecoration  
+RecyclerItemDecoration allows you to draw divider between items in recyclerview with multiple ViewType without considering items' positions!
+You don't need to think about items' position! You need to care about their ViewType!!  
+Project Address: https://github.com/magiepooh/RecyclerItemDecoration  
+Renderings: ![Renderings:](https://raw.githubusercontent.com/magiepooh/RecyclerItemDecoration/master/art/demo_vertical.gif) ![Renderings:](https://raw.githubusercontent.com/magiepooh/RecyclerItemDecoration/master/art/demo_horizontal.gif)
+
 #### 2. ActionBar  
 1. ActionBarSherlock  
 Action bar implementation which uses the native action bar on Android 4.0+ and a custom implementation on pre-4.0 through a single API and theme.   
@@ -240,7 +254,12 @@ Renderings: ![Renderings](https://lh6.ggpht.com/VnKUZenAozQ0KFAm5blFTGqMaKFjvX-B
 The idea of ResideMenu is from Dribbble 1 and 2 likes iOS ResideMenu   
 Project Address: https://github.com/SpecialCyCi/AndroidResideMenu    
 Renderings: ![Renderings](https://github.com/SpecialCyCi/AndroidResideMenu/raw/master/2.gif)    
-<a href="https://github.com/Trinea/android-open-project/edit/master/English%20Version/README.md#include" title="Back to directory" style="width:100%"><img src="http://farm4.staticflickr.com/3737/12167413134_edcff68e22_o.png" align="right"/></a>  
+
+1. FloatingActionMenu-Animation  
+Extended FloatingActionMenu lib, with custom menu icon, animation when scrolling
+Project Address: https://github.com/toanvc/FloatingActionMenu-Animation  
+Renderings: ![Renderings](https://github.com/toanvc/FloatingActionMenu-Animation/raw/master/screenshots/scale.gif)    
+<a href="https://github.com/Trinea/android-open-project/edit/master/English%20Version/README.md#include" title="Back to directory" style="width:100%"><img src="http://farm4.staticflickr.com/3737/12167413134_edcff68e22_o.png" align="right"/></a> 
 
 #### 4. ViewPager Gallery  
 1. Android-ViewPagerIndicator  
@@ -359,6 +378,12 @@ Renderings:
 ![](https://github.com/lsjwzh/RecyclerViewPager/blob/master/fragment.gif)
 <a href="https://github.com/Trinea/android-open-project#%E7%9B%AE%E5%89%8D%E5%8C%85%E6%8B%AC" style="width:100%"><img src="http://farm4.staticflickr.com/3737/12167413134_edcff68e22_o.png" align="right"/></a>
 
+1. WoWoViewPager
+A material design Viewpager.Optimized for scrolling app intros or making your CV app. Free and open source.
+WoWoViewPager combines animations and viewpager. When you are swiping viewpager, you are also controlling the frames of the animation. Just like rewinding time.
+Project Address: [WoWoViewPager](https://github.com/Nightonke/WoWoViewPager)
+Renderings: ![](https://github.com/Nightonke/WoWoViewPager/blob/master/Pictures/AppIntroExample.gif)
+
 #### 5. GridView
 1. StaggeredGridView  
 A modified version of Android's experimental StaggeredGridView. Includes own OnItemClickListener and OnItemLongClickListener, selector, and fixed position restore. contains cache, extends from ViewGroup  
@@ -380,7 +405,11 @@ Similar App: Pinterest
 A drag-and-drop scrolling grid view for Android, extends from ViewGroup. It can  swich from up to bottom, If you want switch from left screen to right please use PagedDragDropGrid below  
 Project Address: https://github.com/thquinn/DraggableGridView  
 Demo Apk: https://github.com/thquinn/DraggableGridView/blob/master/bin/DraggableGridViewSample.apk?raw=true  
-   
+You can customize the width and height of item,and the count of item each line,You can also customize the padding of line.Default value is 20dp.  
+Project Address: [DraggableGridView](https://github.com/andyken/DraggableGridView)  
+Renderings:   
+![Renderings](https://github.com/andyken/DraggableGridView/blob/master/sample/sample.gif)
+
 1. StickyGridHeaders  
 StickyGridHeaders is an Android library that provides a GridView that shows items in sections with headers. By default the section headers stick to the top like the People app in Android 4.x but this can be turned off.  
 Project Address: https://github.com/TonicArtos/StickyGridHeaders     
@@ -526,6 +555,15 @@ Project Address:https://github.com/lsjwzh/MaterialLoadingProgressBar
 Renderings: ![Renderings](https://github.com/lsjwzh/MaterialLoadingProgressBar/raw/master/screen.gif)
 <a href="https://github.com/Trinea/android-open-project/edit/master/English%20Version/README.md#include" title="Back to directory" style="width:100%"><img src="http://farm4.staticflickr.com/3737/12167413134_edcff68e22_o.png" align="right"/></a>
 
+1. LoadingDrawable
+some beautiful android loading drawable, can be combined with any view as the loading view and the progressbar.<br>
+Project Address:https://github.com/dinuscxj/LoadingDrawable
+Renderings: <br/>
+![LoadingDrawable](https://raw.githubusercontent.com/dinuscxj/LoadingDrawable/master/Preview/AnimalDrawable.gif?width=300)
+![LoadingDrawable](https://raw.githubusercontent.com/dinuscxj/LoadingDrawable/master/Preview/SceneryDrawable.gif?width=300)
+![LoadingDrawable](https://raw.githubusercontent.com/dinuscxj/LoadingDrawable/master/Preview/CircleJumpDrawable.gif?width=300)
+![LoadingDrawable](https://raw.githubusercontent.com/dinuscxj/LoadingDrawable/master/Preview/CircleRotateDrawable.gif?width=300)
+
 #### 8. TextView  
 include TextView and other views extend TextView, like EditText, Button, RadioButton and so on  
 
@@ -573,6 +611,12 @@ Android experiment showing a sinking TextView
 Project Address: https://github.com/RomainPiel/Titanic    
 Renderings: ![Renderings](https://github.com/RomainPiel/Titanic/raw/master/titanic.gif)   
 <a href="https://github.com/Trinea/android-open-project/edit/master/English%20Version/README.md#include" title="Back to directory" style="width:100%"><img src="http://farm4.staticflickr.com/3737/12167413134_edcff68e22_o.png" align="right"/></a>  
+
+1. MoneyTextView  
+A TextView used for inputing and adding money  
+Project Address: https://github.com/andyken/MoneyTextView  
+Renderings:   
+![Renderings](https://github.com/andyken/MoneyTextView/blob/master/sample/sample1.gif)  
 
 #### 9. Others  
 1. achartengine  
@@ -790,6 +834,18 @@ Project Address: https://github.com/ogaclejapan/ArcLayout
 Demo Apk: https://play.google.com/store/apps/details?id=com.ogaclejapan.arclayout.demo  
 Renderings: ![Renderings](https://raw.githubusercontent.com/ogaclejapan/ArcLayout/master/art/demo1.gif)
 
+1. FinestWebView  
+Beautiful and customizable Android Activity that shows web pages within an app.  
+Project Address: https://github.com/TheFinestArtist/FinestWebView-Android  
+Sample App: https://play.google.com/store/apps/details?id=com.thefinestartist.finestwebview.sample  
+Renderings: ![Renderings](https://github.com/TheFinestArtist/FinestWebView-Android/blob/master/art/screenshots.png?raw=true)
+
+1. YouTubePlayerActivity  
+Simply pass a url to play youtube video in new activity. It supports screen orientation, media volume control and etc.  
+Project Address: https://github.com/TheFinestArtist/YouTubePlayerActivity  
+Sample App: https://play.google.com/store/apps/details?id=com.thefinestartist.ytpa.sample  
+Renderings: ![Renderings](https://github.com/thefinestartist/YouTubePlayerActivity/blob/master/art/preview.gif)
+
 ## 2. Common Util Libs  
 Include Dependency Injection, ImageCache, Network, Database ORM, Android common lib, Compatible low version, Multimedia, Event Bus, Sensor, Security, Plug-in, File, Others<a href="https://github.com/Trinea/android-open-project/edit/master/English%20Version/README.md#include" title="Back to directory" style="width:100%"><img src="http://farm4.staticflickr.com/3737/12167413134_edcff68e22_o.png" align="right"/></a>  
 #### 1. Dependency Injection  
@@ -815,6 +871,11 @@ Document: http://jakewharton.github.io/butterknife/
 A fast dependency injector for Android and Java.    
 Project Address: https://github.com/square/dagger  
 Document: http://square.github.io/dagger/  
+
+1. Anvil
+A small library for building reactive UI components, data binding and event listener injection. Inspired by React.    
+Project Address: https://github.com/zserge/anvil  
+Document: http://anvil.site/  
 <a href="https://github.com/Trinea/android-open-project/edit/master/English%20Version/README.md#include" title="Back to directory" style="width:100%"><img src="http://farm4.staticflickr.com/3737/12167413134_edcff68e22_o.png" align="right"/></a>  
 
 #### 2. Image Cache  
@@ -874,6 +935,11 @@ Document: http://sonatype.github.io/async-http-client/
 Android Asynchronous Networking and Image Loading  
 Project Address: https://github.com/koush/ion  
 Document: https://github.com/koush/ion#more-examples  
+
+1. Android Networking  
+Android Networking is a powerful library for doing any type of networking in Android Applications 
+Project Address: https://github.com/amitshekhariitbhu/AndroidNetworking  
+Document: http://amitshekhariitbhu.github.io/AndroidNetworking/  
    
 1. Http Request  
 A simple convenience library for using a HttpURLConnection to make requests and access the response.  
@@ -1030,7 +1096,10 @@ Demo Apk: https://play.google.com/store/apps/details?id=teaonly.droideye
 libpng for Android NDK  
 Project Address: https://github.com/julienr/libpng-android  
 Document: http://www.libpng.org/pub/png/libpng.html  
-<a href="https://github.com/Trinea/android-open-project/edit/master/English%20Version/README.md#include" title="Back to directory" style="width:100%"><img src="http://farm4.staticflickr.com/3737/12167413134_edcff68e22_o.png" align="right"/></a>  
+<a href="https://github.com/Trinea/android-open-project/edit/master/English%20Version/README.md#include" title="Back to directory" style="width:100%"><img src="http://farm4.staticflickr.com/3737/12167413134_edcff68e22_o.png" align="right"/></a>
+
+1. Image File Selector  
+Project Address: https://github.com/sw926/ImageFileSelector 
 
 #### 8. Event Bus  
 A typical use case for Android apps is gluing Activities, Fragments, and background threads together. Conventional wiring of those elements often introduces complex and error-prone dependencies and life cycle issues.   
@@ -1163,7 +1232,12 @@ Project Address: https://github.com/JakeWharton/salvage
 A Job Queue specifically written for Android to easily schedule jobs (tasks) that run in the background, improving UX and application stability.  
 Project Address: https://github.com/path/android-priority-jobqueue  
 Document: https://github.com/path/android-priority-jobqueue#getting-started  
-   
+
+1. Glide Bitmap Pool  
+Glide Bitmap Pool is a memory management library for reusing the bitmap memory
+Project Address: https://github.com/amitshekhariitbhu/GlideBitmapPool 
+Document: https://amitshekhariitbhu.github.io/GlideBitmapPool/ 
+
 1. jsoup  
 Java HTML Parser, with best of DOM, CSS, and jquery  
 Project Address: https://github.com/jhy/jsoup  
@@ -1243,6 +1317,10 @@ Gesture detector framework for multitouch handling on Android
 Project Address: https://github.com/Almeros/android-gesture-detectors  
 <a href="https://github.com/Trinea/android-open-project/edit/master/English%20Version/README.md#include" title="Back to directory" style="width:100%"><img src="http://farm4.staticflickr.com/3737/12167413134_edcff68e22_o.png" align="right"/></a>  
 
+1. CacheUtilsLibrary  
+This is a simple Android utils library to write any type of data into cache files and then read them later, using Gson to serialize and deserialize these data.  
+Project Address: https://github.com/westlinkin/CacheUtilsLibrary  
+
 ## 3. Excellent projects  
 Linux  
 Project Address: https://github.com/torvalds/linux  
@@ -1308,6 +1386,12 @@ Demo Apk: https://play.google.com/store/apps/details?id=com.todotxt.todotxttouch
 Muzei Live Wallpaper for Android  
 Project Address: https://github.com/romannurik/muzei  
 Demo Apk: https://play.google.com/store/apps/details?id=net.nurik.roman.muzei  
+
+(14) Etar Calendar  
+Etar is an OpenSource material designed calendar  
+Project Address: https://github.com/xsoh/Etar-Calendar  
+Demo Apk: https://play.google.com/store/apps/details?id=ws.xsoh.etar  
+Renderings: ![Etar Calendar](https://raw.githubusercontent.com/xsoh/Etar-Calendar/materialdesign/assets/_pre_prod/publish/v1.0/animation.gif)  
 <a href="https://github.com/Trinea/android-open-project/edit/master/English%20Version/README.md#include" title="Back to directory" style="width:100%"><img src="http://farm4.staticflickr.com/3737/12167413134_edcff68e22_o.png" align="right"/></a>
 
 ## 4: Development and testing tools  
