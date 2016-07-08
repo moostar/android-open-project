@@ -26,6 +26,8 @@ import com.sina.weibo.sdk.auth.WeiboAuthListener;
 import com.sina.weibo.sdk.auth.sso.SsoHandler;
 import com.sina.weibo.sdk.constant.WBConstants;
 import com.sina.weibo.sdk.exception.WeiboException;
+import com.sina.weibo.sdk.net.RequestListener;
+import com.sina.weibo.sdk.net.openapi.RefreshTokenApi;
 import com.sina.weibo.sdk.utils.LogUtil;
 import com.sina.weibo.sdk.utils.Utility;
 
@@ -140,6 +142,24 @@ public class SocialWeibo implements Socialbase,IWeiboHandler.Response{
 
     /** 微博微博分享接口实例 */
     private IWeiboShareAPI mWeiboShareAPI = null;
+
+    private void refreshTokenRequest() {
+        Oauth2AccessToken   token  =  mAccessToken;//AccessTokenKeeper.readAccessToken(WBOpenAPIActivity.this);
+        RefreshTokenApi.create(LemonApp.getContext()).refreshToken(
+                APP_KEY, token.getRefreshToken(), new RequestListener() {
+
+                    @Override
+                    public void onWeiboException( WeiboException arg0 ) {
+                        Toast.makeText(LemonApp.getContext(), "RefreshToken Result : " + arg0.getMessage(), Toast.LENGTH_LONG).show();
+
+                    }
+
+                    @Override
+                    public void onComplete( String arg0 ) {
+                        Toast.makeText(LemonApp.getContext(), "RefreshToken Result : " + arg0, Toast.LENGTH_LONG).show();
+                    }
+                });
+    }
 
     public void initActivity() {
 

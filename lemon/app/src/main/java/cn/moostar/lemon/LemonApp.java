@@ -16,7 +16,7 @@ import cn.moostar.lemon.ui.core.JumpActivity;
  */
 public class LemonApp extends Application {
 
-    public static Context context;
+    private static Context context;
     @Override
     public void onLowMemory() {
         super.onLowMemory();
