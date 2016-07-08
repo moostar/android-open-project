@@ -1,5 +1,6 @@
 package cn.moostar.lemon.tools;
 
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
@@ -13,6 +14,8 @@ public class LemonLog {
     public static void info(Object obj,String msg ){
         log.info(msg);
     }
+
+    public static void error(Object obj,String msg) {log.log(Level.WARNING,"===========##########" + msg);}
 
 //    private void configLog(String logFileNamePrefix) {
 ////        ConsoleHandler consoleHandler =new ConsoleHandler();

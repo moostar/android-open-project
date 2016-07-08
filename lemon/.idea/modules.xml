@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/lemon.iml" filepath="$PROJECT_DIR$/lemon.iml" />
+      <module fileurl="file://$USER_HOME$/Prj/android/android-open-project/lemon/app/app.iml" filepath="$USER_HOME$/Prj/android/android-open-project/lemon/app/app.iml" />
+      <module fileurl="file://$USER_HOME$/Prj/android/android-open-project/lemon/lemon.iml" filepath="$USER_HOME$/Prj/android/android-open-project/lemon/lemon.iml" />
     </modules>
   </component>
 </project>

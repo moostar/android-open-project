@@ -5,14 +5,17 @@
     android:gravity="center">
 
     <ImageButton
-        android:id="@+id/img1"
+        android:id="@+id/param1"
         android:layout_width="50dp"
         android:layout_height="50dp" />
 
     <ImageButton
+        android:id="@+id/param2"
         android:layout_width="50dp"
         android:layout_height="50dp" />
+
     <ImageButton
+        android:id="@+id/param3"
         android:layout_width="50dp"
         android:layout_height="50dp" />
 </LinearLayout>

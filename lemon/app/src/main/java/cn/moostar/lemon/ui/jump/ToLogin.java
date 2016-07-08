@@ -1,4 +1,4 @@
-package cn.moostar.lemon.ui.core.jump;
+package cn.moostar.lemon.ui.jump;
 
 import cn.moostar.lemon.ui.LoginActivity;
 import cn.moostar.lemon.ui.core.JumpActivity;

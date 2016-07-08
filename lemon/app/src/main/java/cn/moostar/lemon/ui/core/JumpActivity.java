@@ -2,7 +2,6 @@ package cn.moostar.lemon.ui.core;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 
 import java.util.HashMap;
 
@@ -58,7 +57,9 @@ public class JumpActivity {
                 Bundle bundle = new Bundle();
                 intent.setClass(LemonApp.getContext(), actInfo.cls);
                 intent.putExtras(bundle);
-                LemonApp.getContext().startActivity(intent);
+
+                if(CoreActivity.getSingle().getTopActivity() != null)
+                    CoreActivity.getSingle().getTopActivity().startActivity(intent);
             }
 
         }

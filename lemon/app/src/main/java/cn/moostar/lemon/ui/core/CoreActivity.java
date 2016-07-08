@@ -97,4 +97,13 @@ public class CoreActivity {
         }
     }
 
+    public Activity getTopActivity(){
+        ActivityInfo info = activityStack.peek();
+
+        if(info.weak != null)
+            return info.weak.get();
+
+        return null;
+    }
+
 }

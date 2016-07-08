@@ -1,13 +1,11 @@
 package cn.moostar.lemon.ui;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import cn.moostar.lemon.LemonApp;
 import cn.moostar.lemon.R;
 import cn.moostar.lemon.ui.core.BaseActivity;
-import cn.moostar.lemon.ui.core.jump.ToLogin;
+import cn.moostar.lemon.ui.jump.ToLogin;
 
 public class SplashActivity extends BaseActivity {
 
@@ -20,17 +18,11 @@ public class SplashActivity extends BaseActivity {
 
 
 
+
         findViewById(R.id.text).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                ToLogin.login();
-                Intent intent = new Intent();
-
-                Bundle bundle = new Bundle();
-                intent.setClass(SplashActivity.this, LoginActivity.class);
-                intent.putExtras(bundle);
-                startActivity(intent);
-
+                ToLogin.login();
             }
         });
     }
