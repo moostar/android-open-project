@@ -3,5 +3,14 @@ package cn.moostar.lemon.logic.social;
 /**
  * Created by Apple on 16/7/8.
  */
-public class SocialWeibo extends Socialbase{
+public class SocialWeibo implements Socialbase{
+    @Override
+    public void Login(AuthObject obj) {
+
+    }
+
+    @Override
+    public void Share(ShareObject obj) {
+
+    }
 }
