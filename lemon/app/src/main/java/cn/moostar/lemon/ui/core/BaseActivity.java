@@ -40,4 +40,6 @@ public class BaseActivity extends AppCompatActivity {
         super.onResume();
         CoreActivity.getSingle().onResume(this);
     }
+
+
 }

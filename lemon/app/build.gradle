@@ -4,6 +4,32 @@ android {
     compileSdkVersion 23
     buildToolsVersion "23.0.3"
 
+    sourceSets {
+        main {
+//            manifest.srcFile 'src/main/AndroidManifest.xml'
+//            java.srcDirs = ['src/main/java']
+//            resources.srcDirs = ['src/main/res']
+//            aidl.srcDirs = ['src']
+//            renderscript.srcDirs = ['src']
+//            res.srcDirs = ['res']
+//            assets.srcDirs = ['assets']
+
+            jniLibs.srcDir 'libs'
+        }
+
+        // Move the tests to tests/java, tests/res, etc...
+        //instrumentTest.setRoot('tests')
+
+        // Move the build types to build-types/<type>
+        // For instance, build-types/debug/java, build-types/debug/AndroidManifest.xml, ...
+        // This moves them out of them default location under src/<type>/... which would
+        // conflict with src/ being used by the main source set.
+        // Adding new build types or product flavors should be accompanied
+        // by a similar customization.
+        //debug.setRoot('build-types/debug')
+        //release.setRoot('build-types/release')
+
+    }
     defaultConfig {
         applicationId "cn.moostar.lemon"
         minSdkVersion 15
@@ -11,6 +37,22 @@ android {
         versionCode 1
         versionName "1.0"
     }
+
+    signingConfigs {
+        debug {
+            storeFile file("dpocket2011.keystore")
+            storePassword "dpocket2011"
+            keyAlias "123456"
+            keyPassword "dpocket2011"
+        }
+        release {
+            storeFile file("dpocket2011.keystore")
+            storePassword "dpocket2011"
+            keyAlias "123456"
+            keyPassword "dpocket2011"
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false

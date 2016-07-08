@@ -1,15 +1,16 @@
 package cn.moostar.lemon.ui;
 
-import android.app.Activity;
 import android.os.Bundle;
 
 import cn.moostar.lemon.R;
+import cn.moostar.lemon.logic.LogicSocialMgr;
+import cn.moostar.lemon.ui.core.ResultActivity;
 import cn.moostar.lemon.ui.view.SocialFragment;
 
 /**
  * Created by Apple on 16/7/7.
  */
-public class LoginActivity extends Activity implements SocialFragment.ISSOLoginFragment {
+public class LoginActivity extends ResultActivity implements SocialFragment.ISSOLoginFragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,7 @@ public class LoginActivity extends Activity implements SocialFragment.ISSOLoginF
             case SocialFragment.ISSOLoginFragment.QQ:
                 break;
             case SocialFragment.ISSOLoginFragment.WEIBO:
+                LogicSocialMgr.getSingle().getSocialWeibo().Login();
                 break;
             case SocialFragment.ISSOLoginFragment.WEIXIN:
                 break;
