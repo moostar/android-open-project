@@ -1,4 +1,4 @@
-package cn.moostar.lemon.ui.view;
+package cn.dpocket.moplusand.uinew.ui.view;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -8,8 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
-import cn.moostar.lemon.R;
-import cn.moostar.lemon.tools.LemonLog;
+import cn.dpocket.moplusand.uinew.R;
+import cn.dpocket.moplusand.uinew.tools.LemonLog;
 
 /**
  * Created by xiong on 7/7/16.

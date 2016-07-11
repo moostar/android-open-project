@@ -1,4 +1,4 @@
-package cn.moostar.lemon.ui.core;
+package cn.dpocket.moplusand.uinew.ui.core;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +13,8 @@ public class BaseActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        wndCreate();
+
         CoreActivity.getSingle().onCreate(this);
         JumpActivity.getSingle().addCache(this.getClass());
     }
@@ -20,6 +22,9 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
+
+        wndNewIntent();
+
         CoreActivity.getSingle().onNewIntent(this);
     }
 
@@ -32,14 +37,29 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
+
+        wndPause();
+
         CoreActivity.getSingle().onPause(this);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+
+        wndResume();
+
         CoreActivity.getSingle().onResume(this);
     }
+
+
+    protected void wndCreate(){};
+
+    protected void wndNewIntent(){};
+
+    protected void wndPause(){};
+
+    protected void wndResume(){};
 
 
 }

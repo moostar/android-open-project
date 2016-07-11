@@ -31,7 +31,7 @@ android {
 
     }
     defaultConfig {
-        applicationId "cn.moostar.lemon"
+        applicationId "cn.dpocket.moplusand.uinew"
         minSdkVersion 15
         targetSdkVersion 23
         versionCode 1

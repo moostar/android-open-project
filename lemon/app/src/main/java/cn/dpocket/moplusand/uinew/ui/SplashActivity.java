@@ -1,17 +1,16 @@
-package cn.moostar.lemon.ui;
+package cn.dpocket.moplusand.uinew.ui;
 
-import android.os.Bundle;
 import android.view.View;
 
-import cn.moostar.lemon.R;
-import cn.moostar.lemon.ui.core.BaseActivity;
-import cn.moostar.lemon.ui.jump.ToLogin;
+import cn.dpocket.moplusand.uinew.R;
+import cn.dpocket.moplusand.uinew.ui.core.BaseActivity;
+import cn.dpocket.moplusand.uinew.ui.jump.ToLogin;
 
 public class SplashActivity extends BaseActivity {
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public void wndCreate() {
+
         setContentView(R.layout.activity_splash);
         getSupportActionBar().hide();
 

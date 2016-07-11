@@ -1,12 +1,12 @@
-package cn.moostar.lemon.ui.core;
+package cn.dpocket.moplusand.uinew.ui.core;
 
 import android.content.Intent;
 import android.os.Bundle;
 
 import java.util.HashMap;
 
-import cn.moostar.lemon.LemonApp;
-import cn.moostar.lemon.tools.LemonLog;
+import cn.dpocket.moplusand.uinew.LemonApp;
+import cn.dpocket.moplusand.uinew.tools.LemonLog;
 
 /**
  * Created by Apple on 16/7/7.

@@ -11,7 +11,7 @@
 
     <fragment
         android:id="@+id/id_fragment_title"
-        android:name="cn.moostar.lemon.ui.view.SocialFragment"
+        android:name="cn.dpocket.moplusand.uinew.ui.view.SocialFragment"
         android:layout_width="fill_parent"
         android:layout_height="45dp" />
 

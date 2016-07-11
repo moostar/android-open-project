@@ -1,7 +1,7 @@
-package cn.moostar.lemon.ui.jump;
+package cn.dpocket.moplusand.uinew.ui.jump;
 
-import cn.moostar.lemon.ui.LoginActivity;
-import cn.moostar.lemon.ui.core.JumpActivity;
+import cn.dpocket.moplusand.uinew.ui.LoginActivity;
+import cn.dpocket.moplusand.uinew.ui.core.JumpActivity;
 
 /**
  * Created by Apple on 16/7/7.

@@ -1,4 +1,4 @@
-package cn.moostar.lemon.ui.core;
+package cn.dpocket.moplusand.uinew.ui.core;
 
 import android.app.Activity;
 

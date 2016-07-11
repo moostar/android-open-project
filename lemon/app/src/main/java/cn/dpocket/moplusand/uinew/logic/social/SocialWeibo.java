@@ -1,4 +1,4 @@
-package cn.moostar.lemon.logic.social;
+package cn.dpocket.moplusand.uinew.logic.social;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -16,7 +16,6 @@ import com.sina.weibo.sdk.api.VoiceObject;
 import com.sina.weibo.sdk.api.WebpageObject;
 import com.sina.weibo.sdk.api.WeiboMultiMessage;
 import com.sina.weibo.sdk.api.share.BaseResponse;
-import com.sina.weibo.sdk.api.share.IWeiboHandler;
 import com.sina.weibo.sdk.api.share.IWeiboShareAPI;
 import com.sina.weibo.sdk.api.share.SendMultiMessageToWeiboRequest;
 import com.sina.weibo.sdk.api.share.WeiboShareSDK;
@@ -28,24 +27,36 @@ import com.sina.weibo.sdk.constant.WBConstants;
 import com.sina.weibo.sdk.exception.WeiboException;
 import com.sina.weibo.sdk.net.RequestListener;
 import com.sina.weibo.sdk.net.openapi.RefreshTokenApi;
+import com.sina.weibo.sdk.openapi.UsersAPI;
+import com.sina.weibo.sdk.openapi.models.ErrorInfo;
+import com.sina.weibo.sdk.openapi.models.User;
 import com.sina.weibo.sdk.utils.LogUtil;
 import com.sina.weibo.sdk.utils.Utility;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
-import cn.moostar.lemon.LemonApp;
-import cn.moostar.lemon.R;
-import cn.moostar.lemon.ui.core.CoreActivity;
+import cn.dpocket.moplusand.uinew.CONSTANTS;
+import cn.dpocket.moplusand.uinew.LemonApp;
+import cn.dpocket.moplusand.uinew.R;
+import cn.dpocket.moplusand.uinew.ui.core.CoreActivity;
+import cn.dpocket.moplusand.uinew.ui.jump.ToWBShare;
+
+
+/**
+ * 注意:分享界面如果需要知道成功和失败，需要初始化intshare;
+ * 如果token过期，建议重新refresh Token
+ */
 
 /**
  * Created by Apple on 16/7/8.
  */
-public class SocialWeibo implements Socialbase,IWeiboHandler.Response{
+public class SocialWeibo extends Socialbase/*,IWeiboHandler.Response*/{
 
 
 
-    private final String APP_KEY = "4007297864";
+
+//    private final String APP_KEY = "4007297864";
     //    private final String CONSUMER_SECRET = "6a3111383c98a154e73e7f7e65eafaf1";
     private final String REDIRECT_URL = "http://www.youja.cn/sina_oauth2";
     public  final String SCOPE = "email,direct_messages_read,direct_messages_write,"
@@ -61,7 +72,7 @@ public class SocialWeibo implements Socialbase,IWeiboHandler.Response{
 
     @Override
     public void Login() {
-        mAuthInfo = new AuthInfo(LemonApp.getContext(), APP_KEY, REDIRECT_URL, SCOPE);
+        mAuthInfo = new AuthInfo(LemonApp.getContext(), CONSTANTS.APPKEY_FOR_WEIBO, REDIRECT_URL, SCOPE);
         mSsoHandler = new SsoHandler(CoreActivity.getSingle().getTopActivity(), mAuthInfo);
 
         mSsoHandler.authorize(new AuthListener());
@@ -69,58 +80,39 @@ public class SocialWeibo implements Socialbase,IWeiboHandler.Response{
 
     @Override
     public void Share(ShareObject obj) {
-
+//        sendMessage(true,false,false,false,false,false);
+        ToWBShare.toshare();
     }
 
-    /**
-     * 微博认证授权回调类。
-     * 1. SSO 授权时，需要在 {@link #onActivityResult} 中调用 {@link SsoHandler#authorizeCallBack} 后，
-     *    该回调才会被执行。
-     * 2. 非 SSO 授权时，当授权结束后，该回调就会被执行。
-     * 当授权成功后，请保存该 access_token、expires_in、uid 等信息到 SharedPreferences 中。
-     */
-    class AuthListener implements WeiboAuthListener {
+    @Override
+    public void UserInfo() {
+        UsersAPI mUsersAPI = new UsersAPI(LemonApp.getContext(), CONSTANTS.APPKEY_FOR_WEIBO, mAccessToken);
 
-        @Override
-        public void onComplete(Bundle values) {
-            // 从 Bundle 中解析 Token
-            mAccessToken = Oauth2AccessToken.parseAccessToken(values);
-            //从这里获取用户输入的 电话号码信息
-            String  phoneNum =  mAccessToken.getPhoneNum();
-            if (mAccessToken.isSessionValid()) {
-                // 显示 Token
-//                updateTokenView(false);
-
-                // 保存 Token 到 SharedPreferences
-//                AccessTokenKeeper.writeAccessToken(WBAuthActivity.this, mAccessToken);
-
-                Toast.makeText(LemonApp.getContext(),
-                        "auth_success", Toast.LENGTH_SHORT).show();
-            } else {
-                // 以下几种情况，您会收到 Code：
-                // 1. 当您未在平台上注册的应用程序的包名与签名时；
-                // 2. 当您注册的应用程序包名与签名不正确时；
-                // 3. 当您在平台上注册的包名和签名与您当前测试的应用的包名和签名不匹配时。
-                String code = values.getString("code");
-                String message = "auth_failed";
-                if (!TextUtils.isEmpty(code)) {
-                    message = message + "\nObtained the code: " + code;
+        mUsersAPI.show(mAccessToken.getUid(), new RequestListener() {
+            @Override
+            public void onComplete(String response) {
+                if (!TextUtils.isEmpty(response)) {
+//                    LogUtil.i(TAG, response);
+                    // 调用 User#parse 将JSON串解析成User对象
+                    User user = User.parse(response);
+                    if (user != null) {
+                        Toast.makeText(LemonApp.getContext(),
+                                "获取User信息成功，用户昵称：" + user.screen_name,
+                                Toast.LENGTH_LONG).show();
+                    } else {
+                        Toast.makeText(LemonApp.getContext(), response, Toast.LENGTH_LONG).show();
+                    }
                 }
-                Toast.makeText(LemonApp.getContext(), message, Toast.LENGTH_LONG).show();
             }
-        }
 
-        @Override
-        public void onCancel() {
-            Toast.makeText(LemonApp.getContext(),
-                    "weibosdk_demo_toast_auth_canceled", Toast.LENGTH_LONG).show();
-        }
+            @Override
+            public void onWeiboException(WeiboException e) {
+                ErrorInfo info = ErrorInfo.parse(e.getMessage());
+                Toast.makeText(LemonApp.getContext(), info.toString(), Toast.LENGTH_LONG).show();
+            }
+        });
 
-        @Override
-        public void onWeiboException(WeiboException e) {
-            Toast.makeText(LemonApp.getContext(),
-                    "Auth exception : " + e.getMessage(), Toast.LENGTH_LONG).show();
-        }
+
     }
 
     /**
@@ -138,59 +130,8 @@ public class SocialWeibo implements Socialbase,IWeiboHandler.Response{
 
     }
 
+    public void toBaseResp(BaseResponse baseResp){
 
-
-    /** 微博微博分享接口实例 */
-    private IWeiboShareAPI mWeiboShareAPI = null;
-
-    private void refreshTokenRequest() {
-        Oauth2AccessToken   token  =  mAccessToken;//AccessTokenKeeper.readAccessToken(WBOpenAPIActivity.this);
-        RefreshTokenApi.create(LemonApp.getContext()).refreshToken(
-                APP_KEY, token.getRefreshToken(), new RequestListener() {
-
-                    @Override
-                    public void onWeiboException( WeiboException arg0 ) {
-                        Toast.makeText(LemonApp.getContext(), "RefreshToken Result : " + arg0.getMessage(), Toast.LENGTH_LONG).show();
-
-                    }
-
-                    @Override
-                    public void onComplete( String arg0 ) {
-                        Toast.makeText(LemonApp.getContext(), "RefreshToken Result : " + arg0, Toast.LENGTH_LONG).show();
-                    }
-                });
-    }
-
-    public void initActivity() {
-
-        // 创建微博分享接口实例
-        mWeiboShareAPI = WeiboShareSDK.createWeiboAPI(CoreActivity.getSingle().getTopActivity(), APP_KEY);
-
-        // 注册第三方应用到微博客户端中，注册成功后该应用将显示在微博的应用列表中。
-        // 但该附件栏集成分享权限需要合作申请，详情请查看 Demo 提示
-        // NOTE：请务必提前注册，即界面初始化的时候或是应用程序初始化时，进行注册
-        mWeiboShareAPI.registerApp();
-
-        // 当 Activity 被重新初始化时（该 Activity 处于后台时，可能会由于内存不足被杀掉了），
-        // 需要调用 {@link IWeiboShareAPI#handleWeiboResponse} 来接收微博客户端返回的数据。
-        // 执行成功，返回 true，并调用 {@link IWeiboHandler.Response#onResponse}；
-        // 失败返回 false，不调用上述回调
-//        if (savedInstanceState != null)
-        {
-            mWeiboShareAPI.handleWeiboResponse(CoreActivity.getSingle().getTopActivity().getIntent(), this);
-        }
-    }
-
-
-    /**
-     * 接收微客户端博请求的数据。
-     * 当微博客户端唤起当前应用并进行分享时，该方法被调用。
-     *
-     * @param baseRequest 微博请求数据对象
-     * @see {@link IWeiboShareAPI#handleWeiboRequest}
-     */
-    @Override
-    public void onResponse(BaseResponse baseResp) {
         if(baseResp!= null){
             switch (baseResp.errCode) {
                 case WBConstants.ErrorCode.ERR_OK:
@@ -207,9 +148,94 @@ public class SocialWeibo implements Socialbase,IWeiboHandler.Response{
             }
         }
     }
+    public class AuthListener implements WeiboAuthListener{
+
+        /**
+         * 微博认证授权回调类。
+         * 1. SSO 授权时，需要在 {@link #onActivityResult} 中调用 {@link SsoHandler#authorizeCallBack} 后，
+         *    该回调才会被执行。
+         * 2. 非 SSO 授权时，当授权结束后，该回调就会被执行。
+         * 当授权成功后，请保存该 access_token、expires_in、uid 等信息到 SharedPreferences 中。
+         */
+        @Override
+        public void onComplete(Bundle values) {
+            // 从 Bundle 中解析 Token
+            mAccessToken = Oauth2AccessToken.parseAccessToken(values);
+            //从这里获取用户输入的 电话号码信息
+//            String phoneNum = mAccessToken.getPhoneNum();
+            if (mAccessToken != null && mAccessToken.isSessionValid()) {
+                // 显示 Token
+//                updateTokenView(false);
+
+                // 保存 Token 到 SharedPreferences
+//                AccessTokenKeeper.writeAccessToken(WBAuthActivity.this, mAccessToken);
+
+//                Toast.makeText(LemonApp.getContext(),
+//                        "auth_success", Toast.LENGTH_SHORT).show();
+//
+//                {
+////                        initActivity();
+//                    sendMultiMessage(true,false,false,false,false,false);
+//                }
+                socialObs.Login(CONSTANTS.RESULT_SUCCESS);
+            } else {
+                // 以下几种情况，您会收到 Code：
+                // 1. 当您未在平台上注册的应用程序的包名与签名时；
+                // 2. 当您注册的应用程序包名与签名不正确时；
+                // 3. 当您在平台上注册的包名和签名与您当前测试的应用的包名和签名不匹配时。
+                String code = values.getString("code");
+                String message = "auth_failed";
+                if (!TextUtils.isEmpty(code)) {
+                    message = message + "\nObtained the code: " + code;
+                }
+//                Toast.makeText(LemonApp.getContext(), message, Toast.LENGTH_LONG).show();
+                socialObs.Login(CONSTANTS.RESULT_FAIL);
+            }
+        }
+        @Override
+        public void onCancel() {
+//            Toast.makeText(LemonApp.getContext(),
+//                    "weibosdk_demo_toast_auth_canceled", Toast.LENGTH_LONG).show();
+            socialObs.Login(CONSTANTS.RESULT_CANCEL);
+        }
+
+        @Override
+        public void onWeiboException(WeiboException e) {
+//            Toast.makeText(LemonApp.getContext(),
+//                    "Auth exception : " + e.getMessage(), Toast.LENGTH_LONG).show();
+            socialObs.Login(CONSTANTS.RESULT_FAIL);
+        }
+    }
+
+
+
+    /** 微博微博分享接口实例 */
+    private IWeiboShareAPI mWeiboShareAPI = null;
+
+
+    private void refreshTokenRequest() {
+        Oauth2AccessToken   token  =  mAccessToken;//AccessTokenKeeper.readAccessToken(WBOpenAPIActivity.this);
+        RefreshTokenApi.create(LemonApp.getContext()).refreshToken(
+                CONSTANTS.APPKEY_FOR_WEIBO, token.getRefreshToken(), new RequestListener() {
+
+                    @Override
+                    public void onWeiboException( WeiboException arg0 ) {
+                        Toast.makeText(LemonApp.getContext(), "RefreshToken Result : " + arg0.getMessage(), Toast.LENGTH_LONG).show();
+
+                    }
+
+                    @Override
+                    public void onComplete( String arg0 ) {
+                        Toast.makeText(LemonApp.getContext(), "RefreshToken Result : " + arg0, Toast.LENGTH_LONG).show();
+                    }
+                });
+    }
+
+
+
     /**
      * 第三方应用发送请求消息到微博，唤起微博分享界面。
-     * @see {@link #sendMultiMessage} 或者 {@link #sendSingleMessage}
+     * @see {@link #sendMultiMessage} }
      */
     private void sendMessage(boolean hasText, boolean hasImage,
                              boolean hasWebpage, boolean hasMusic, boolean hasVideo, boolean hasVoice) {
@@ -282,29 +308,28 @@ public class SocialWeibo implements Socialbase,IWeiboHandler.Response{
 //        }
 //        else if (mShareType == SHARE_ALL_IN_ONE)
         {
-            AuthInfo authInfo = new AuthInfo(LemonApp.getContext(), APP_KEY, REDIRECT_URL, SCOPE);
+            AuthInfo authInfo = new AuthInfo(LemonApp.getContext(), CONSTANTS.APPKEY_FOR_WEIBO, REDIRECT_URL, SCOPE);
 //            Oauth2AccessToken accessToken = AccessTokenKeeper.readAccessToken(getApplicationContext());
 
             String token = "";
             if (mAccessToken != null) {
                 token = mAccessToken.getToken();
             }
-            mWeiboShareAPI.sendRequest(CoreActivity.getSingle().getTopActivity(), request, authInfo, token, new WeiboAuthListener() {
-
-                @Override
-                public void onWeiboException( WeiboException arg0 ) {
-                }
-
-                @Override
-                public void onComplete( Bundle bundle ) {
-                    // TODO Auto-generated method stub
-                    Oauth2AccessToken newToken = Oauth2AccessToken.parseAccessToken(bundle);
-//                    AccessTokenKeeper.writeAccessToken(getApplicationContext(), newToken);
-                    Toast.makeText(LemonApp.getContext(), "onAuthorizeComplete token = " + newToken.getToken(), Toast.LENGTH_LONG).show();
-                }
-
+            mWeiboShareAPI = WeiboShareSDK.createWeiboAPI(LemonApp.getContext(), CONSTANTS.APPKEY_FOR_WEIBO);
+            mWeiboShareAPI.sendRequest(CoreActivity.getSingle().getTopActivity(), request, authInfo, token, new WeiboAuthListener(){
                 @Override
                 public void onCancel() {
+
+                }
+
+                @Override
+                public void onComplete(Bundle bundle) {
+
+                }
+
+                @Override
+                public void onWeiboException(WeiboException e) {
+
                 }
             });
         }

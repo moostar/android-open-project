@@ -1,4 +1,4 @@
-package cn.moostar.lemon;
+package cn.dpocket.moplusand.uinew;
 
 import android.app.ActivityManager;
 import android.app.Application;
@@ -6,10 +6,10 @@ import android.content.Context;
 
 import java.util.List;
 
-import cn.moostar.lemon.tools.LemonLog;
-import cn.moostar.lemon.ui.LoginActivity;
-import cn.moostar.lemon.ui.SplashActivity;
-import cn.moostar.lemon.ui.core.JumpActivity;
+import cn.dpocket.moplusand.uinew.tools.LemonLog;
+import cn.dpocket.moplusand.uinew.ui.LoginActivity;
+import cn.dpocket.moplusand.uinew.ui.SplashActivity;
+import cn.dpocket.moplusand.uinew.ui.core.JumpActivity;
 
 /**
  * Created by Apple on 16/7/7.
@@ -33,7 +33,7 @@ public class LemonApp extends Application {
 
         String processName = getProcessName(this, android.os.Process.myPid());
         if (processName != null) {
-//            boolean defaultProcess = processName.equals(Constants.REAL_PACKAGE_NAME);
+//            boolean defaultProcess = processName.equals(CONSTANTS.REAL_PACKAGE_NAME);
 //            if (defaultProcess) {
 //
 //            } else if (processName.contains(":webbrowser")) {
