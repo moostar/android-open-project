@@ -154,13 +154,13 @@ public class LogicSocialMgr {
         @Override
         public void Login(int result) {
             if(result == CONSTANTS.RESULT_CANCEL){
-                Utils.ShowToast("cancel");
+                Utils.showToast("cancel");
             }
             else if(result == CONSTANTS.RESULT_SUCCESS){
-                Utils.ShowToast("success");
+                Utils.showToast("success");
             }
             else if(result == CONSTANTS.RESULT_FAIL){
-                Utils.ShowToast("fail");
+                Utils.showToast("fail");
             }
         }
 

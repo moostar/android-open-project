@@ -12,8 +12,9 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().hide();
 
-        wndCreate();
+        WndCreate(savedInstanceState);
 
         CoreActivity.getSingle().onCreate(this);
         JumpActivity.getSingle().addCache(this.getClass());
@@ -23,7 +24,7 @@ public class BaseActivity extends AppCompatActivity {
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
 
-        wndNewIntent();
+        WndNewIntent();
 
         CoreActivity.getSingle().onNewIntent(this);
     }
@@ -38,7 +39,7 @@ public class BaseActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
 
-        wndPause();
+        WndPause();
 
         CoreActivity.getSingle().onPause(this);
     }
@@ -47,19 +48,19 @@ public class BaseActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
-        wndResume();
+        WndResume();
 
         CoreActivity.getSingle().onResume(this);
     }
 
 
-    protected void wndCreate(){};
+    protected void WndCreate(Bundle savedInstanceState){};
 
-    protected void wndNewIntent(){};
+    protected void WndNewIntent(){};
 
-    protected void wndPause(){};
+    protected void WndPause(){};
 
-    protected void wndResume(){};
+    protected void WndResume(){};
 
 
 }
