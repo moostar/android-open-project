@@ -79,6 +79,11 @@ dependencies {
     compile 'com.j256.ormlite:ormlite-android:4.48'
     compile 'com.j256.ormlite:ormlite-core:4.48'
 
+    //pulllistview
+    compile 'in.srain.cube:ultra-ptr:1.0.11'
+    compile 'in.srain.cube:cube-sdk:1.0.44@aar'
+
+
 //    compile 'com.facebook.fresco:fresco:0.5.2+'
 //    compile 'me.imid.swipebacklayout.lib:library:1.0.0'
 //    compile 'se.emilsjolander:stickylistheaders:2.6.0'
