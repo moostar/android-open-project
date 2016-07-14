@@ -1,7 +1,5 @@
 package cn.dpocket.moplusand.uinew.ui;
 
-import android.os.Bundle;
-
 import cn.dpocket.moplusand.uinew.R;
 import cn.dpocket.moplusand.uinew.ui.core.BaseActivity;
 import de.keyboardsurfer.android.widget.crouton.Crouton;
@@ -10,7 +8,7 @@ import de.keyboardsurfer.android.widget.crouton.Style;
 public class SplashActivity extends BaseActivity {
 
     @Override
-    public void WndCreate(Bundle savedInstanceState) {
+    public void WndCreate() {
 
         setContentView(R.layout.activity_splash);
 

@@ -1,7 +1,6 @@
 package cn.dpocket.moplusand.uinew.ui;
 
 import android.content.Intent;
-import android.os.Bundle;
 
 import cn.dpocket.moplusand.uinew.R;
 import cn.dpocket.moplusand.uinew.logic.LogicSocialMgr;
@@ -14,7 +13,7 @@ import cn.dpocket.moplusand.uinew.ui.view.SocialFragment;
 public class LoginActivity extends BaseActivity implements SocialFragment.ISSOLoginFragment {
 
     @Override
-    public void WndCreate(Bundle savedInstanceState) {
+    public void WndCreate() {
 
         setContentView(R.layout.activity_login);
 

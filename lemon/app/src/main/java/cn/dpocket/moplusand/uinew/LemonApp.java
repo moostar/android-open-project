@@ -7,6 +7,7 @@ import android.content.Context;
 import java.util.List;
 
 import cn.dpocket.moplusand.uinew.tools.LemonLog;
+import cn.dpocket.moplusand.uinew.ui.FavoritesActivity;
 import cn.dpocket.moplusand.uinew.ui.LoginActivity;
 import cn.dpocket.moplusand.uinew.ui.SplashActivity;
 import cn.dpocket.moplusand.uinew.ui.core.JumpActivity;
@@ -59,6 +60,7 @@ public class LemonApp extends Application {
     private void initLemon(){
         JumpActivity.getSingle().addCache(SplashActivity.class);
         JumpActivity.getSingle().addCache(LoginActivity.class);
+        JumpActivity.getSingle().addCache(FavoritesActivity.class);
     }
 
     /**

@@ -4,8 +4,7 @@
     android:layout_height="match_parent"
     android:background="@color/cube_mints_f1f1f1"
     android:orientation="vertical">
-
-    <in.srain.cube.views.pager.TabPageIndicator
+    <cn.dpocket.moplusand.uinew.ui.view.pager.TabPageIndicator
         android:id="@+id/view_pager_tab_indicator"
         android:layout_width="match_parent"
         android:layout_height="36dp"
@@ -14,7 +13,7 @@
         android:paddingLeft="15dp"
         android:paddingRight="15dp" />
 
-    <in.srain.cube.views.ptr.PtrClassicFrameLayout
+    <cn.dpocket.moplusand.uinew.ui.view.refreshview.PtrClassicFrameLayout
         android:id="@+id/view_pager_ptr_frame"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -26,7 +25,7 @@
             android:layout_height="match_parent"
             android:background="@color/cube_mints_white" />
 
-    </in.srain.cube.views.ptr.PtrClassicFrameLayout>
+    </cn.dpocket.moplusand.uinew.ui.view.refreshview.PtrClassicFrameLayout>
 
 
 </LinearLayout>

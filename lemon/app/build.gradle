@@ -80,8 +80,10 @@ dependencies {
     compile 'com.j256.ormlite:ormlite-core:4.48'
 
     //pulllistview
-    compile 'in.srain.cube:ultra-ptr:1.0.11'
-    compile 'in.srain.cube:cube-sdk:1.0.44@aar'
+//    compile 'in.srain.cube:ultra-ptr:1.0.11'
+//    compile 'in.srain.cube:cube-sdk:1.0.44@aar'
+//    compile 'com.chanven.lib:cptr:1.0.0'
+
 
 
 //    compile 'com.facebook.fresco:fresco:0.5.2+'

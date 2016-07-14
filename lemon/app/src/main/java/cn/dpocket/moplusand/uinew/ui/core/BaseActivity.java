@@ -14,7 +14,7 @@ public class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
 
-        WndCreate(savedInstanceState);
+        WndCreate();
 
         CoreActivity.getSingle().onCreate(this);
         JumpActivity.getSingle().addCache(this.getClass());
@@ -54,7 +54,7 @@ public class BaseActivity extends AppCompatActivity {
     }
 
 
-    protected void WndCreate(Bundle savedInstanceState){};
+    protected void WndCreate(){};
 
     protected void WndNewIntent(){};
 
