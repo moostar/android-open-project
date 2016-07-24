@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?><!--直播中view-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/live"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:visibility="visible">
+
+
+    <ListView
+        android:id="@+id/lvLiveTxtList"
+        android:layout_width="fill_parent"
+        android:layout_height="126dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="60dp" />
+
+    <TextView
+        android:id="@+id/tvEnterMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="23dp"
+        android:layout_above="@+id/lvLiveTxtList"
+        android:layout_marginBottom="6dp"
+        android:layout_marginLeft="9dp"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/live_enter_msg_bg"
+        android:gravity="center"
+        android:paddingBottom="4dp"
+        android:paddingLeft="7dp"
+        android:paddingRight="7dp"
+        android:paddingTop="4dp"
+        android:textColor="@color/app_normal_fontcolor6"
+        android:textSize="@dimen/app_fontsize_min_small"
+        android:visibility="invisible" />
+
+
+    <cn.dpocket.moplusand.uinew.ui.anim.gift.GiftDribbleView
+        android:id="@+id/llLiveGiftList"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_above="@+id/tvEnterMsg"
+        android:layout_marginLeft="9dp"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical" />
+
+
+    <!--秀主头部信息区域-->
+
+    <!--<include layout="@layout/include_shower_head" />-->
+    <cn.dpocket.moplusand.uinew.widget.MasterView
+        android:id="@+id/masterView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp" />
+
+
+    <!--秀主头部信息区域结束-->
+
+    <RelativeLayout
+        android:id="@+id/rlMyDiamonds"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_alignLeft="@+id/masterView"
+        android:layout_below="@+id/masterView"
+        android:layout_marginTop="14dp"
+        android:background="@drawable/my_diamonds">
+
+        <ImageView
+            android:id="@+id/ivDiamonds"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:src="@drawable/dimonds" />
+
+        <cn.dpocket.moplusand.uinew.widget.DiamondsView
+            android:id="@+id/tvMyDimonds"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_toRightOf="@id/ivDiamonds"
+            android:gravity="center" />
+
+        <ImageView
+            android:id="@+id/ivDiamondsArrow"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="8dp"
+            android:layout_toRightOf="@id/tvMyDimonds"
+            android:src="@drawable/dimonds_arrow" />
+    </RelativeLayout>
+
+    <!--弹出输入框按钮-->
+    <ImageView
+        android:id="@+id/ivMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="11dp"
+        android:layout_marginLeft="9dp"
+        android:src="@drawable/live_message_icon" />
+
+    <!--全屏按钮-->
+    <ImageView
+        android:id="@+id/ivClean"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="11dp"
+        android:layout_marginRight="9dp"
+        android:src="@drawable/live_fullscreen_icon" />
+
+    <!--礼物按钮-->
+    <ImageView
+        android:id="@+id/ivGift"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="11dp"
+        android:layout_marginRight="14dp"
+        android:layout_toLeftOf="@+id/ivClean"
+        android:src="@drawable/live_gift_icon" />
+
+
+    <!--在线人数-->
+    <LinearLayout
+        android:id="@+id/rlLiveOnlineCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="11dp"
+        android:layout_marginRight="14dp"
+        android:layout_toLeftOf="@+id/ivGift"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvLiveOnlneCount"
+            android:layout_width="wrap_content"
+            android:layout_height="12dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/bg_live_online_count"
+            android:gravity="center"
+            android:minWidth="24dp"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:textColor="@color/app_normal_fontcolor1"
+            android:textSize="@dimen/app_fontsize_min_ten" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/live_online_count_icon" />
+
+    </LinearLayout>
+
+
+    <!--分享按钮-->
+    <ImageView
+        android:id="@+id/ivLiveShare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="11dp"
+        android:layout_marginRight="14dp"
+        android:layout_toLeftOf="@+id/rlLiveOnlineCount"
+        android:src="@drawable/live_share_icon" />
+
+    <!--设置按钮-->
+    <ImageView
+        android:id="@+id/ivSetting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="11dp"
+        android:layout_marginRight="14dp"
+        android:layout_toLeftOf="@+id/ivLiveShare"
+        android:src="@drawable/live_settings_icon" />
+
+    <!--关闭直播按钮-->
+    <ImageView
+        android:id="@+id/ivExit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/live_exit_icon" />
+
+    <!--水印图片-->
+    <LinearLayout
+        android:id="@+id/llWatermark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@id/ivExit"
+        android:layout_marginTop="59dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/masterId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:shadowColor="@color/black60"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="2"
+            android:textColor="@color/white50"
+            android:textSize="@dimen/app_fontsize_8"
+            tools:text="dfsfsfsdfsf" />
+
+        <ImageView
+            android:id="@+id/ivYJTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:src="@drawable/yjtv" />
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="3dp"
+            android:shadowColor="@color/black60"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="2"
+            android:textColor="@color/white50"
+            android:textSize="@dimen/app_fontsize_8"
+            tools:text="dfsfsfsdfsf" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/llSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/ivSetting"
+        android:layout_marginRight="14dp"
+        android:layout_toLeftOf="@+id/ivLiveShare"
+        android:orientation="vertical"
+        android:visibility="gone"
+        tools:visibility="visible">
+        <!--切换摄像头-->
+        <ImageView
+            android:id="@+id/ivSwitchCamera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:src="@drawable/live_switch_camera_icon" />
+
+        <!--美颜-->
+        <!--<ImageView-->
+        <!--android:id="@+id/ivFaceBeauty"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginBottom="14dp"-->
+        <!--android:src="@drawable/live_face_beauty_open_icon" />-->
+
+        <!--静音-->
+        <ImageView
+            android:id="@+id/ivMute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:src="@drawable/live_mute_icon" />
+
+
+    </LinearLayout>
+
+    <cn.dpocket.moplusand.uinew.widget.FavorLayout
+        android:id="@+id/live_rank_anim_layout"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/ivClean"
+        android:layout_alignParentRight="true"
+        android:gravity="bottom" />
+
+    <RelativeLayout
+        android:id="@+id/keyboard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone">
+
+        <!--<include-->
+            <!--layout="@layout/chatroom_chatmenubar"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_centerVertical="true" />-->
+    </RelativeLayout>
+
+
+    <!--<cn.dpocket.moplusand.uinew.widget.OnlineView-->
+        <!--android:id="@+id/onlineView"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:visibility="gone" />-->
+
+    <LinearLayout
+        android:id="@+id/replace"
+        android:layout_width="match_parent"
+        android:layout_height="235dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/cr_black80"
+        android:visibility="gone" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/fragment_content">
+    </RelativeLayout>
+
+</RelativeLayout>
+

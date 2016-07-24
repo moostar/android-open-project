@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/liveEnd"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#aaaaaa"
+    tools:visibility="visible">
+
+
+
+        <ImageView
+            android:id="@+id/ivLiveEndBg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/app_bg1_80"/>
+
+        <!--关闭直播按钮-->
+        <ImageView
+            android:id="@+id/ivLiveStop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/live_exit_icon" />
+
+        <ImageView android:id="@+id/ivEndHeader"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            tools:src="@drawable/def_header_icon_720_female"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="75dp"
+            android:layout_alignParentTop="true"/>
+
+        <RelativeLayout android:id="@+id/rlShareOver"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ivEndHeader"
+            android:layout_marginTop="35dp"
+            >
+
+            <TextView
+                android:id="@+id/txtShareOver"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="@string/live_over"
+                android:textColor="@color/app_normal_fontcolor0"
+                android:textSize="@dimen/app_fontsize_super"
+                />
+            <View
+                android:layout_width="67dp"
+                android:layout_height="1px"
+                android:layout_marginRight="4.5dp"
+                android:layout_toLeftOf="@+id/txtShareOver"
+                android:background="@color/app_bg3"
+                android:layout_centerVertical="true"
+                />
+
+            <View
+                android:layout_width="67dp"
+                android:layout_height="1px"
+                android:layout_marginLeft="4.5dp"
+                android:layout_toRightOf="@+id/txtShareOver"
+                android:background="@color/app_bg3"
+                android:layout_centerVertical="true"/>
+
+        </RelativeLayout>
+
+
+
+        <!--观看人数-->
+        <RelativeLayout
+            android:id="@+id/rlLiveStopOnlineCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rlShareOver"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp">
+
+            <TextView
+                android:id="@+id/tvLiveStopOnlineCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/app_normal_fontcolor4"
+                android:textSize="@dimen/app_fontsize_super_large4" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvLiveStopOnlineCount"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:text="@string/live_online_count"
+                android:textColor="@color/white"
+                android:textSize="@dimen/app_fontsize_middle" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rlLiveStopOnlineCount"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal">
+            <!--礼物数量-->
+            <RelativeLayout
+                android:id="@+id/rlLiveStopGiftCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rlShareOver"
+                android:layout_centerHorizontal="true"
+                android:layout_marginRight="62dp">
+
+                <TextView
+                    android:id="@+id/tvLiveStopGiftCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="@color/app_normal_fontcolor4"
+                    android:textSize="@dimen/app_fontsize_super_super" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvLiveStopGiftCount"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/live_recive_gift_count"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/app_fontsize_middle" />
+
+            </RelativeLayout>
+            <!--赞数量-->
+            <RelativeLayout
+                android:id="@+id/rlLiveStopPariseCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rlShareOver"
+                android:layout_centerHorizontal="true">
+
+                <TextView
+                    android:id="@+id/tvLiveStopPariseCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="@color/app_normal_fontcolor4"
+                    android:textSize="@dimen/app_fontsize_super_super" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvLiveStopPariseCount"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/live_recive_parise_count"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/app_fontsize_middle" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+
+        <TextView
+            android:id="@+id/btnLiveEndAndSend"
+            android:layout_width="250dip"
+            android:layout_height="40dip"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/bg_live_end_btn"
+            android:gravity="center"
+            android:text="@string/live_end_and_send"
+            android:textColor="@color/app_normal_fontcolor3"
+            android:textSize="@dimen/app_fontsize_3"
+            android:layout_marginBottom="78dp"
+            />
+
+        <TextView
+            android:id="@+id/btnLiveContinue"
+            android:layout_width="250dip"
+            android:layout_height="40dip"
+            android:layout_above="@id/btnLiveEndAndSend"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dip"
+            android:background="@drawable/bg_btn_round_corner_yellow"
+            android:gravity="center"
+            android:text="@string/live_continue"
+            android:textColor="@color/app_normal_fontcolor3"
+            android:textSize="@dimen/app_fontsize_3" />
+
+        <!--分享-->
+        <LinearLayout
+            android:id="@+id/llEndShareView"
+            android:layout_width="wrap_content"
+            android:layout_height="41dip"
+            android:layout_above="@+id/btnLiveContinue"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="55dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <!--<ImageView-->
+            <!--android:id="@+id/ivEndShareHall"-->
+            <!--android:layout_width="35dp"-->
+            <!--android:layout_height="35dp"-->
+            <!--android:layout_marginRight="14dip"-->
+            <!--android:layout_weight="1"-->
+            <!--android:src="@drawable/ic_share_hall_normal" />-->
+
+            <ImageView
+                android:id="@+id/ivEndShareWxChat"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginRight="25dip"
+                android:layout_weight="1"
+                android:src="@drawable/ic_share_wechat_normal" />
+
+            <ImageView
+                android:id="@+id/ivEndShareWxFriend"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginRight="25dip"
+                android:layout_weight="1"
+                android:src="@drawable/ic_share_wechat_friend_normal" />
+
+            <ImageView
+                android:id="@+id/ivEndShareQq"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginRight="25dip"
+                android:layout_weight="1"
+                android:src="@drawable/ic_share_qq_normal" />
+
+            <ImageView
+                android:id="@+id/ivEndShareQzone"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginRight="25dip"
+                android:layout_weight="1"
+                android:src="@drawable/ic_share_qzone_normal" />
+
+            <ImageView
+                android:id="@+id/ivEndShareSina"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:src="@drawable/ic_share_weibo_normal" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/share_to"
+            android:textSize="@dimen/app_fontsize_3"
+            android:textColor="@color/app_normal_fontcolor0"
+            android:layout_above="@+id/llEndShareView"
+            android:layout_marginBottom="19dp"
+            android:layout_centerHorizontal="true"
+            />
+</RelativeLayout>

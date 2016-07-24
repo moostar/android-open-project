@@ -11,4 +11,45 @@
     <string name="cube_ptr_seconds_ago">&#160;秒之前</string>
     <string name="cube_ptr_minutes_ago">&#160;分钟之前</string>
     <string name="cube_ptr_hours_ago">&#160;小时之前</string>
+
+
+
+
+
+    <string name="video_file_verifing">该视频暂时无法观看，请稍后再试</string>
+    <string name="master_living">正在使用移动网络,将消耗流量</string>
+    <string name="net2g_not_live">正在2G网络下无法直播,切换到质量更好的网络再试试吧！</string>
+    <string name="no_net">无网络</string>
+    <string name="live_settings">直播设置</string>
+    <string name="back_camera">后置摄像头</string>
+    <string name="front_camera">前置摄像头</string>
+    <string name="close_audio">声音关</string>
+    <string name="open_audio">声音开</string>
+    <string name="open_video">画面开</string>
+    <string name="close_video">画面关</string>
+    <string name="open_flash_light">闪光开</string>
+    <string name="close_flash_light">闪光关</string>
+    <string name="set_live_title">给直播选一个话题</string>
+    <string name="start_live">开始直播</string>
+    <string name="switch_camera">翻转摄像头</string>
+    <string name="open_beauty_face">开美颜</string>
+    <string name="close_beauty_face">关美颜</string>
+    <string name="no_phone_no_live">您还未认证手机,无法直播</string>
+    <string name="goto_bind_phone">前往认证</string>
+    <string name="stop_live">确认结束直播</string>
+    <string name="live_duration"><![CDATA[<B><font color="#ffbe23">%1$d</font>人看过<br/>被赞<font color="#ffbe23">%2$d</font>次<br/>收获<font color="#ffbe23">%3$d</font>个礼物</B>]]></string>
+    <string name="live">直播</string>
+    <string name="live_count">%d人看过</string>
+    <string name="live_over">直播结束</string>
+    <string name="live_end_share_to">成就分享到</string>
+    <string name="live_continue">继续直播</string>
+    <string name="live_online_count">观看人数</string>
+    <string name="live_recive_gift_count">收到礼物</string>
+    <string name="live_recive_parise_count">收到的赞</string>
+    <string name="live_end_and_send">结束并发布视频</string>
+    <string name="live_bestoped">该直播被禁播</string>
+    <string name="live_term">直播须知</string>
+    <string name="live_loading_text">热播酱暂时离开了,待会继续...</string>
+    <string name="live_start_failure">直播开启失败，请稍后重试</string>
+    <string name="share_to">分享到</string>
 </resources>

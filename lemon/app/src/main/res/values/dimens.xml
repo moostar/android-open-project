@@ -1,5 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="activity_horizontal_margin">16dp</dimen>
+ <dimen name="bottom_tab_font_size">18dip</dimen>
+ <dimen name="bottom_tab_padding_up">2dip</dimen>
+ <dimen name="bottom_tab_padding_drawable">8dip</dimen>
+
+
+     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+ <dimen name="app_fontsize_event_age">11dip</dimen>
+ <dimen name="app_fontsize_middlle2">16dip</dimen>
+
+ <dimen name="gd_arrow_offset">0dp</dimen>
+ <dimen name="very_big">24dip</dimen>
+ <dimen name="title_style">22dip</dimen>
+
+ <dimen name="item1">80dip</dimen>
+ <dimen name="item2">64dip</dimen>
+ <dimen name="item3">48dip</dimen>
+ <dimen name="item4">32dip</dimen>
+ <dimen name="item5">40dip</dimen>
+ <dimen name="item6">24dip</dimen>
+ <dimen name="item7">16dip</dimen>
+ <dimen name="item8">50dip</dimen>
+ <dimen name="item9">56dip</dimen>
+ <dimen name="item10">120dip</dimen>
+ <dimen name="item11">90dip</dimen>
+ <dimen name="item12">100dip</dimen>
+ <dimen name="item15">76dip</dimen>
+
+
+ <dimen name="viewpadding3">3dip</dimen>
+
+ <dimen name="agesize">9.5dip</dimen>
+
+
+ <dimen name="space1">2dip</dimen>
+ <dimen name="space2">4dip</dimen>
+ <dimen name="space3">6dip</dimen>
+ <dimen name="space4">8dip</dimen>
+ <dimen name="space5">10dip</dimen>
+ <dimen name="space6">12dip</dimen>
+ <dimen name="space7">14dip</dimen>
+ <dimen name="space8">16dip</dimen>
+ <dimen name="space9">18dip</dimen>
+ <dimen name="space10">20dip</dimen>
+ <dimen name="space11">22dip</dimen>
+ <dimen name="space12">24dip</dimen>
+ <dimen name="space13">26dip</dimen>
+ <dimen name="space16">36dip</dimen>
+ <dimen name="space18">40dip</dimen>
+ <dimen name="space24">54dip</dimen>
+ <dimen name="space30">60dip</dimen>
+ <dimen name="space40">80dip</dimen>
+
+ <!-- 跟样式表统一 -->
+ <dimen name="app_fontsize_large2">16dp</dimen>  <!-- 10号字体 -->
+ <dimen name="app_fontsize_super_large">7dp</dimen>  <!-- 8号字体 -->
+ <dimen name="app_fontsize_min_nine">8dp</dimen>  <!-- 7号字体 -->
+ <dimen name="app_fontsize_min_ten">9dp</dimen>   <!-- 6号字体 -->
+ <dimen name="app_fontsize_min_small">10dp</dimen>  <!-- 5号字体 -->
+ <dimen name="app_fontsize_small">11dp</dimen> <!-- 4号字体 -->
+ <dimen name="app_fontsize_min_middle">12dp</dimen>  <!-- 9号字体 -->
+ <dimen name="app_fontsize_middle">13dp</dimen> <!-- 3号字体 -->
+ <dimen name="app_fontsize_middlemore">14dp</dimen>
+ <dimen name="app_fontsize_littlelarge">14dp</dimen> <!-- 2号字体 -->
+ <dimen name="app_fontsize_large">15dp</dimen> <!-- 1号字体 -->
+ <dimen name="app_fontsize_super">17dp</dimen><!-- 0号字体 -->
+ <dimen name="app_fontsize_super_super">26dp</dimen><!-- 0号字体 -->
+
+ <dimen name="app_fontsize_super_large3">18dp</dimen>  <!-- 18号字体 -->
+ <dimen name="app_fontsize_super_large4">30dp</dimen>  <!-- 30号字体 -->
+
+ <dimen name="app_fontsize_super_large5">20dp</dimen>
+
+
+ <!-- 6.0新字号 -->
+ <dimen name="app_fontsize_0">20dp</dimen>
+ <dimen name="app_fontsize_1">16dp</dimen>
+ <dimen name="app_fontsize_2">14dp</dimen>
+ <dimen name="app_fontsize_3">13dp</dimen>
+ <dimen name="app_fontsize_4">12dp</dimen>
+ <dimen name="app_fontsize_5">11dp</dimen>
+ <dimen name="app_fontsize_6">10dp</dimen>
+ <dimen name="app_fontsize_7">9dp</dimen>
+ <dimen name="app_fontsize_8">8dp</dimen>
+ <dimen name="app_fontsize_21">27dp</dimen>
+
+<!-- 6.0间距-->
+ <dimen name="divider_10">5dp</dimen>
+ <dimen name="divider_20">10dp</dimen>
+ <dimen name="divider_30">15dp</dimen>
+ <!-- 6.0标题栏高度-->
+ <dimen name="title_height">44dp</dimen>
+
 </resources>
